@@ -12,22 +12,22 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "webdriverio": "^8.6.7"
+    "webdriverio": "^9.4.5"
   },
   "devDependencies": {
     "@wdio/cli": "^8.6.7",
-    "@wdio/devtools-service": "^8.6.9",
-    "@wdio/local-runner": "^8.6.7",
+    "@wdio/devtools-service": "^6.3.0",
+    "@wdio/local-runner": "^9.4.5",
     "@wdio/mocha-framework": "^8.6.6",
     "@wdio/spec-reporter": "^8.6.6",
-    "chromedriver": "^111.0.0",
+    "chromedriver": "^131.0.4",
     "eslint": "^8.38.0",
     "eslint-plugin-mocha": "^10.1.0",
     "eslint-plugin-wdio": "^8.0.14",
-    "geckodriver": "^3.2.0",
+    "geckodriver": "^5.0.0",
     "wdio-chromedriver-service": "^8.1.1",
     "wdio-eslinter-service": "^0.0.4",
-    "wdio-geckodriver-service": "^4.1.1",
+    "wdio-geckodriver-service": "^5.0.2",
     "wdio-intercept-service": "4.0.0"
   }
 }
