@@ -1,7 +1,6 @@
 {
   "name": "hm08-qa-us",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "lint": "npx eslint .",
@@ -15,8 +14,8 @@
     "webdriverio": "^9.4.5"
   },
   "devDependencies": {
-    "@wdio/cli": "^8.6.7",
-    "@wdio/devtools-service": "^6.3.0",
+    "@wdio/cli": "^9.4.5",
+    "@wdio/devtools-service": "^9.4.5",
     "@wdio/local-runner": "^9.4.5",
     "@wdio/mocha-framework": "^8.6.6",
     "@wdio/spec-reporter": "^8.6.6",
@@ -29,5 +28,17 @@
     "wdio-eslinter-service": "^0.0.4",
     "wdio-geckodriver-service": "^5.0.2",
     "wdio-intercept-service": "4.0.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etorresone/hm08-qa-us.git"
+  },
+  "bugs": {
+    "url": "https://github.com/etorresone/hm08-qa-us/issues"
+  },
+  "homepage": "https://github.com/etorresone/hm08-qa-us#readme",
+  "description": ""
 }

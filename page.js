@@ -9,9 +9,30 @@ module.exports = {
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
+    supportiveButton: '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[1]/div[5]',
+    
     // Modals
     phoneNumberModal: '.modal',
+    paymentModal: '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[2]/div[1]',
+    paymentMethodBox: '//*[@id="root"]/div/div[2]/div[2]/div[1]',
+
+
     // Functions
+    selectPaymentBox:async function() {
+        const paymentMethodBox = await $(this.paymentMethodBox);
+        await paymentMethodBox.click();
+    },
+
+    selectSupportivePlan: async function() {
+        const supportiveButton = await $(this.supportiveButton);
+        await supportiveButton.click();
+    },
+
+    selectPaymentMethod:async function() {
+        const paymentModal = await $(this.paymentModal);
+        await paymentModal.click();
+    },
+
     fillAddresses: async function(from, to) {
         const fromField = await $(this.fromField);
         await fromField.setValue(from);
@@ -48,4 +69,6 @@ module.exports = {
         await codeField.setValue(code)
         await $(this.confirmButton).click()
     },
+
+    
 };
