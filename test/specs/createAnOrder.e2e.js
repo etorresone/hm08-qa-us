@@ -1,7 +1,7 @@
 const page = require('../../page');
 const helper = require('../../helper')
 
-/*describe('Create an order', () => {
+describe('Create an order', () => {
     it('should set the address', async () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
@@ -47,8 +47,7 @@ const helper = require('../../helper')
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.selectSupportivePlan();
         await page.orderBlanket();
-        
-     
+
     })
 
     it('should order ice cream', async () => {
@@ -58,7 +57,7 @@ const helper = require('../../helper')
         await page.orderIceCream();
         await browser.pause(3000);
     })
-    */it('car search modal should appear', async () => {
+    it('car search modal should appear', async () => {
         await browser.url(`/`)
         await page.fillAddresses('East 2nd Street, 601', '1300 1st St');
         await page.selectSupportivePlan();
@@ -72,10 +71,5 @@ const helper = require('../../helper')
         await page.orderAcar();
         await browser.pause(40000);
 
-
-
-
     })
-    
-
-    
+})
