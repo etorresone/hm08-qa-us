@@ -90,7 +90,7 @@ module.exports = {
         const inputCardNumber = await $(this.inputCardNumber);
         await inputCardNumber.setValue(creditCardNumber)
         const inputCardCode = await $(this.inputCardCode);
-        await inputCardCode.setValue(code);
+        await inputCardCode.setValue(this.inputCardCode);
         const cardSignatureStrip = await $(this.cardSignatureStrip);
         await cardSignatureStrip.click();
         const linkCardButton = await $(this.linkCardButton);
