@@ -9,13 +9,13 @@ module.exports = {
         return await $(`div=${obj.toString()}`);
     },
 
-    getCreditCardNumber: function(creditCardNumber) {
+    getCreditCardNumber: function() {
         const number = Math.floor (100000000000 + Math.random() * 900000000000)
-        return `${creditCardNumber}${number}`
+        return `${number}`
     },
 
-    getCardNumberCode: function (cardCode) {
+    getCardNumberCode: function () {
         const number = Math.floor (10 + Math.random() * 90)
-        return `${cardCode}${number}`
+        return `${number}`
     },
 };

@@ -3,35 +3,36 @@ module.exports = {
     fromField: '#from',
     toField: '#to',
     phoneNumberField: '#phone',
-    codeField: '#code',
-    cardNumber: '#number',
-    cardCode: '//*[@id="number"]',
-    writeAmessageBox: '/html/body/div[1]/div/div[3]/div[3]/div[2]/div[2]/div[3]/div',
     messageDriver: '#comment',
+    codeField: '#code',
+  
+
     // Buttons
     callATaxiButton: 'button=Call a taxi',
     phoneNumberButton: '//div[starts-with(text(), "Phone number")]',
     nextButton: 'button=Next',
     confirmButton: 'button=Confirm',
-    supportiveButton: '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[1]/div[5]',
-    orderCarNowButton:'//*[@id="root"]/div/div[3]/div[4]/button',
+    supportiveButton: 'div=Supportive',
+    
     
    //Adding a credit card
-    paymentMethodButton: '.pp-text',
-    addCardButton: '//*[@id="root"]/div/div[2]/div[2]/div[1]/div[2]/div[3]/div[2]',
-    inputCardNumber: '//*[@id="number"]', 
-    inputCardCode: '/html/body/div[1]/div/div[2]/div[2]/div[2]/form/div[1]/div[2]/div[2]/div[2]/input',
-    linkCardButton:'button=Link',
-    closePaymentButton: '//*[@id="root"]/div/div[2]/div[2]/div[1]/button', 
+    paymentMethodButton: '.pp-value-text',
+    addCardButton: '.pp-plus',
+    inputCardNumber: '#number', 
+    inputCardCode: '.card-code #code',
     cardSignatureStrip: '.plc',
+    linkCardButton:'button=Link',
+    closePaymentButton: '.payment-picker.open .close-button.section-close', 
+    
     
     //Ordering Items
-    orderRequirementsSelector: '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[4]',
-    blanketSwitch: '/html/body/div[1]/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[2]/div',
-    addingIceCream: '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div/div[3]',
+    blanketSwitch: '.switch',
+    blanketCheck: '.switch-input',
+    addingIceCream: '.counter-plus',
+    iceCreamCounter: '.counter-value',
     // Modals
     phoneNumberModal: '.modal',
-    orderBodyModal:'/html/body/div[1]/div/div[5]/div[2]',
+    orderBodyModal: '.order-body',
  
     // Functions
 
@@ -78,6 +79,7 @@ module.exports = {
     selectSupportivePlan: async function() {
         const supportiveButton = await $(this.supportiveButton);
         await supportiveButton.click();
+        return supportiveButton;
     },
 
     // Fill card information 
@@ -100,27 +102,20 @@ module.exports = {
     },
    
     //Messaging driver
-    sendAmessageToDriver: async function () {
-        const writeAmessageBox = await $(this.writeAmessageBox);
-        await writeAmessageBox.click();
+    sendAmessageToDriver: async function (message) {
         const messageDriver = await $(this.messageDriver);
-        await messageDriver.click();
         await messageDriver.waitForDisplayed();
-        messageDriver.setValue('I will be bringing my dog');
+        messageDriver.setValue(message);
     },
 
     //Ordering Blanket and Handkerchiefs 
     orderBlanket: async function () {
-        const orderRequirementsSelector = await $(this.orderRequirementsSelector);
-        await orderRequirementsSelector.click();
         const blanketSwitch = await $(this.blanketSwitch);
         await blanketSwitch.click();
     },
 
     //Ordering Ice Cream 
     orderIceCream: async function () {
-        const orderRequirementsSelector = await $(this.orderRequirementsSelector);
-        await orderRequirementsSelector.click();
         const addingIceCream = await $(this.addingIceCream);
         await addingIceCream.click();
         await addingIceCream.click();
@@ -129,15 +124,9 @@ module.exports = {
 
     //Car search modal should appear 
     orderAcar: async function () {
-        const orderCarNowButton = await $(this.orderCarNowButton);
-        await orderCarNowButton.click();
         const orderBodyModal = await $(this.orderBodyModal);
         await orderBodyModal.waitForExist();
 
     },
     
 };
-
-
-
-
